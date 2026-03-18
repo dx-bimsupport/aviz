@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Revitファミリ作成の効率化ガイド | AVIZ Blog</title>
+  <style>
+    :root {
+      --wine-red: #800020;
+      --dark-gray: #1a1a1a;
+      --bg-light: #fdfdfd;
+      --text-main: #2d2d2d;
+      --border-color: #eee;
+    }
+
+    body {
+      font-family: "Times New Roman", "Yu Mincho", "MS Mincho", serif;
+      margin: 0;
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.8;
+    }
+
+    /* Navigation - 子フォルダからトップに戻るリンク設定 */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 50px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(5px);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      color: var(--wine-red);
+      letter-spacing: 0.3em;
+      text-decoration: none;
+    }
+
+    /* Article Container */
+    article {
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .post-header {
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .post-category {
+      color: var(--wine-red);
+      font-size: 14px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .post-title {
+      font-size: 32px;
+      margin: 10px 0 20px;
+      line-height: 1.3;
+    }
+
+    .post-date {
+      font-size: 14px;
+      color: #888;
+    }
+
+    .post-main-img {
+      width: 100%;
+      height: 400px;
+      background: #eee url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=1200') center/cover;
+      margin-bottom: 40px;
+    }
+
+    .post-content h2 {
+      font-size: 24px;
+      border-left: 4px solid var(--wine-red);
+      padding-left: 15px;
+      margin: 40px 0 20px;
+    }
+
+    .post-content p {
+      margin-bottom: 20px;
+    }
+
+    .back-to-top {
+      display: block;
+      text-align: center;
+      margin: 60px 0;
+      color: var(--wine-red);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      background: var(--dark-gray);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    @media (max-width: 768px) {
+      .post-title { font-size: 24px; }
+      .post-main-img { height: 250px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="logo">AVIZ</a>
+  <div>
+    <a href="../index.html#blog" style="text-decoration: none; color: #888; font-size: 14px;">← Back to Blog List</a>
+  </div>
+</nav>
+
+<article>
+  <header class="post-header">
+    <div class="post-category">BIM Technical</div>
+    <h1 class="post-title">Revitファミリ作成の効率化ガイド</h1>
+    <div class="post-date">2026.03.18</div>
+  </header>
+
+  <div class="post-main-img"></div>
+
+  <div class="post-content">
+    <p>建築プロジェクトにおいて、BIMモデルの品質を左右するのは「ファミリの設計」と言っても過言ではありません。本記事では、実務で真に役立つファミリ作成のポイントを解説します。</p>
+
+    <h2>1. パラメータの共通化</h2>
+    <p>集計表やタグで情報を正しく抽出するためには、共有パラメータの活用が不可欠です。社内で統一されたマッピングルールを構築することで、データの整合性が劇的に向上します。</p>
+
+    <h2>2. 詳細度のコントロール</h2>
+    <p>過度に詳細な3DモデルはPCの動作を重くする原因となります。表示設定（粗・並・密）を適切に使い分け、平面図では2Dシンボルを、パースでは3D形状を表示させる工夫が必要です。</p>
+
+    <h2>まとめ</h2>
+    <p>効率的なファミリ作成は、単なるモデリング技術ではなく「情報の整理」です。AVIZでは、こうした標準化の構築アドバイスを行っています。</p>
+  </div>
+
+  <a href="../index.html" class="back-to-top">TOPページへ戻る</a>
+</article>
+
+<footer>
+  <div class="footer-logo">AVIZ</div>
+  <p>© 2026 AVIZ. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
