@@ -11,6 +11,7 @@
       --dark-gray: #1a1a1a;
       --bg-light: #fdfdfd;
       --text-main: #2d2d2d;
+      --border-color: #eee;
     }
 
     body {
@@ -19,6 +20,7 @@
       background-color: var(--bg-light);
       color: var(--text-main);
       line-height: 1.8;
+      scroll-behavior: smooth;
     }
 
     /* Navigation */
@@ -32,7 +34,7 @@
       padding: 15px 50px;
       background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(5px);
-      border-bottom: 1px solid #eee;
+      border-bottom: 1px solid var(--border-color);
     }
 
     .logo {
@@ -65,7 +67,7 @@
     /* Hero */
     .hero {
       height: 70vh;
-      background: linear-gradient(rgba(128,0,32,0.75), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2070'); /* サンプル画像 */
+      background: linear-gradient(rgba(128,0,32,0.75), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2070');
       background-size: cover;
       background-position: center;
       display: flex;
@@ -80,6 +82,7 @@
       font-size: 42px;
       letter-spacing: 0.15em;
       margin-bottom: 10px;
+      padding: 0 20px;
     }
 
     .hero p {
@@ -107,6 +110,32 @@
       color: var(--wine-red);
       letter-spacing: 0.4em;
       margin-bottom: 10px;
+    }
+
+    /* Services */
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 30px;
+    }
+
+    .service-card {
+      padding: 40px 30px;
+      border: 1px solid var(--border-color);
+      text-align: center;
+      transition: 0.3s;
+      background: white;
+    }
+
+    .service-card:hover {
+      background: var(--wine-red);
+      color: white;
+      transform: translateY(-5px);
+    }
+
+    .service-card h3 {
+      font-size: 18px;
+      margin-bottom: 15px;
     }
 
     /* Gallery */
@@ -161,8 +190,9 @@
       text-decoration: none;
       color: inherit;
       background: white;
-      border: 1px solid #eee;
+      border: 1px solid var(--border-color);
       transition: 0.3s;
+      display: block;
     }
 
     .blog-card:hover {
@@ -173,6 +203,8 @@
     .blog-img {
       height: 200px;
       background: #eee;
+      background-size: cover;
+      background-position: center;
     }
 
     .blog-content {
@@ -190,25 +222,30 @@
       font-weight: bold;
     }
 
-    /* Services */
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 30px;
-    }
-
-    .service-card {
-      padding: 40px 30px;
-      border: 1px solid #eee;
+    /* Contact Section */
+    .contact-container {
       text-align: center;
-      transition: 0.3s;
+      background: #fff;
+      padding: 60px 30px;
+      border: 1px solid var(--border-color);
     }
 
-    .service-card:hover {
+    .btn-contact {
+      display: inline-block;
+      padding: 15px 40px;
       background: var(--wine-red);
       color: white;
+      text-decoration: none;
+      letter-spacing: 0.2em;
+      transition: 0.3s;
+      margin-top: 20px;
     }
 
+    .btn-contact:hover {
+      background: var(--dark-gray);
+    }
+
+    /* Footer */
     footer {
       background: var(--dark-gray);
       color: white;
@@ -221,6 +258,13 @@
       letter-spacing: 0.3em;
       margin-bottom: 20px;
     }
+
+    @media (max-width: 768px) {
+      nav { padding: 15px 20px; }
+      nav ul { display: none; } /* スマホでは簡易化 */
+      section { padding: 60px 20px; }
+      .hero h1 { font-size: 32px; }
+    }
   </style>
 </head>
 <body>
@@ -228,7 +272,6 @@
 <nav>
   <a href="#" class="logo">AVIZ</a>
   <ul>
-    <li><a href="#about">ABOUT</a></li>
     <li><a href="#services">SERVICES</a></li>
     <li><a href="#gallery">GALLERY</a></li>
     <li><a href="#blog">BLOG</a></li>
@@ -241,65 +284,82 @@
   <p>建築の可視化とBIMによる最適化ソリューション</p>
 </div>
 
+<!-- Services -->
 <section id="services">
   <h2 class="section-title"><span>SERVICES</span>事業内容</h2>
   <div class="service-grid">
     <div class="service-card">
       <h3>DX/BIMコンサル</h3>
-      <p>標準化・ワークフロー構築</p>
+      <p>標準化・ワークフロー構築の支援</p>
     </div>
     <div class="service-card">
       <h3>ファミリ作成</h3>
-      <p>高品質なRevitファミリ構築</p>
+      <p>実務に即した高品質なRevitデータ構築</p>
     </div>
     <div class="service-card">
       <h3>Dynamo構築</h3>
-      <p>業務自動化スクリプト開発</p>
+      <p>ルーチンワークの自動化アドバイス</p>
     </div>
     <div class="service-card">
       <h3>テクニカルサポート</h3>
-      <p>Revit・ACCの運用支援</p>
+      <p>Revit・ACCの運用に関する技術相談</p>
     </div>
   </div>
 </section>
 
+<!-- Gallery -->
 <section id="gallery" style="background: #f9f9f9;">
   <h2 class="section-title"><span>GALLERY</span>実績紹介</h2>
   <div class="gallery-grid">
     <div class="gallery-item">
+      <!--  -->
       <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800" alt="Work 1">
       <div class="gallery-overlay">Visual Design Case 01</div>
     </div>
     <div class="gallery-item">
+      <!--  -->
       <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800" alt="Work 2">
       <div class="gallery-overlay">BIM Modeling Case 02</div>
     </div>
     <div class="gallery-item">
+      <!-- [Image of Architectural Model] -->
       <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=800" alt="Work 3">
       <div class="gallery-overlay">Dynamo Automation Case 03</div>
     </div>
   </div>
 </section>
 
+<!-- Blog -->
 <section id="blog">
   <h2 class="section-title"><span>BLOG</span>最新記事</h2>
   <div class="blog-grid">
+    <!-- 将来的には href="blog/post1.html" のようにリンクさせます -->
     <a href="#" class="blog-card">
-      <div class="blog-img" style="background: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=500') center/cover;"></div>
+      <div class="blog-img" style="background-image: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=500');"></div>
       <div class="blog-content">
         <div class="blog-date">2026.03.18</div>
-        <div class="blog-title">Revitファミリ作成のベストプラクティス</div>
-        <p>実務で使いやすいファミリの共通仕様について...</p>
+        <div class="blog-title">Revitファミリ作成の効率化ガイド</div>
+        <p>実務で活用するためのパラメータ設計の考え方について解説します。</p>
       </div>
     </a>
     <a href="#" class="blog-card">
-      <div class="blog-img" style="background: url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=500') center/cover;"></div>
+      <div class="blog-img" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=500');"></div>
       <div class="blog-content">
         <div class="blog-date">2026.03.10</div>
-        <div class="blog-title">Dynamoで集計作業を50%削減する方法</div>
-        <p>日々繰り返される転記作業をノードで自動化する...</p>
+        <div class="blog-title">Dynamoを活用した集計作業の自動化</div>
+        <p>BIMデータの整合性を保ちながら、転記ミスをゼロにするワークフロー。</p>
       </div>
     </a>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" style="background: #f1f1f1;">
+  <h2 class="section-title"><span>CONTACT</span>お問い合わせ</h2>
+  <div class="contact-container">
+    <p>プロジェクトのご相談、サービスに関するご質問など、<br>お気軽にお問い合わせください。</p>
+    <p style="font-size: 20px; color: var(--wine-red); margin: 20px 0;">✉️ dx.bim.support@gmail.com</p>
+    <a href="mailto:dx.bim.support@gmail.com" class="btn-contact">メールを送る</a>
   </div>
 </section>
 
