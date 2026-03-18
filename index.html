@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AVIZ | Architecture Visualization and Design</title>
+  <style>
+    :root {
+      --wine-red: #800020; /* メインのワインレッド */
+      --dark-gray: #1a1a1a;
+      --light-gray: #f4f4f4;
+      --text-color: #333;
+    }
+
+    body {
+      font-family: "Times New Roman", "Yu Mincho", "MS Mincho", serif; /* 落ち着いた印象の明朝体推奨 */
+      margin: 0;
+      color: var(--text-color);
+      line-height: 1.8;
+    }
+
+    /* ナビゲーション */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background: white;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: var(--wine-red);
+      letter-spacing: 0.2em;
+    }
+
+    /* ヒーローエリア */
+    .hero {
+      height: 60vh;
+      background: linear-gradient(rgba(128,0,32,0.8), rgba(0,0,0,0.7)), url('YOUR_IMAGE_URL');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    /* サービスセクション */
+    .services {
+      padding: 100px 50px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 60px;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 40px;
+      height: 2px;
+      background: var(--wine-red);
+      margin: 20px auto;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+    }
+
+    .service-card {
+      padding: 20px;
+      border-left: 2px solid var(--wine-red);
+      background: var(--light-gray);
+      transition: 0.3s;
+    }
+
+    .service-card:hover {
+      background: var(--wine-red);
+      color: white;
+    }
+
+    .service-card h3 {
+      font-size: 20px;
+      margin-top: 0;
+    }
+
+    footer {
+      background: var(--dark-gray);
+      color: white;
+      text-align: center;
+      padding: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">AVIZ</div>
+  <div>
+    </div>
+</nav>
+
+<div class="hero">
+  <h1>Architecture Visualization and Design</h1>
+  <p>建築の可視化とBIMソリューションの融合</p>
+</div>
+
+<section class="services">
+  <h2 class="section-title">Our Services</h2>
+  <div class="service-grid">
+    <div class="service-card">
+      <h3>DX/BIMコンサルティング</h3>
+      <p>BIM導入戦略の策定、標準化の構築を支援します。</p>
+    </div>
+    <div class="service-card">
+      <h3>ファミリ作成請負</h3>
+      <p>実務に即した高精度なRevitファミリを提供します。</p>
+    </div>
+    <div class="service-card">
+      <h3>Dynamo作成請負</h3>
+      <p>業務自動化のためのカスタムノードを構築します。</p>
+    </div>
+    <div class="service-card">
+      <h3>テクニカルサポート</h3>
+      <p>Revit・ACCの運用における技術的な助言を行います。</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 AVIZ. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
